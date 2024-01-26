@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "*.kt": "kotlin",
+        "cmath": "cpp",
+        "bitset": "cpp",
+        "algorithm": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "random": "cpp",
+        "stack": "cpp"
+    },
+    "window.autoDetectColorScheme": true
+}
