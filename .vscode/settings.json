@@ -9,7 +9,9 @@
         "string": "cpp",
         "vector": "cpp",
         "random": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "sstream": "cpp",
+        "regex": "cpp"
     },
     "window.autoDetectColorScheme": true
 }
