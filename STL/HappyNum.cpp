@@ -14,25 +14,19 @@ int sumOfDigits(int n)
 }
 bool isHappy(int n)
 {
-    bool loop = true;
-    while (loop)
+    unordered_set<int> seen;
+    while (n != 1 && !seen.count(n))
     {
-        int sum = sumOfDigits(n);
-        cout << sum << endl;
-        if (sum == 1)
-            return 1;
-        else
-        {
-            n = sum;
-        }
+        seen.insert(n);
+        n = sumOfDigits(n);
     }
-    return 0;
+    return n == 1;
 }
 
 int main()
 {
-    int n = 7;
+    int n = 536;
     int sum = isHappy(n);
-    cout << sum;
+    cout << "result:" << sum;
     return 0;
 }
