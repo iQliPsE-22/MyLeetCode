@@ -23,11 +23,12 @@ public:
     {
         head = nullptr;
     }
-    void insertAtBegin(int value)
+    LinkedList& insertAtBegin(int value)
     {
         Node *newNode = new Node(value);
         newNode->next = head;
         head = newNode;
+        return *this;
     }
     void display()
     {
