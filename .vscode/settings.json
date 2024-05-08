@@ -12,7 +12,8 @@
         "stack": "cpp",
         "sstream": "cpp",
         "regex": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "new": "cpp"
     },
     "window.autoDetectColorScheme": true
 }

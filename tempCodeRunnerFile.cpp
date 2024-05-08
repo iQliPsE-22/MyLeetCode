@@ -1,9 +1,14 @@
 #include <iostream>
-#include <bits/stdc++.h>
+#include <vector>
+#include <string>
+
 using namespace std;
 
 int main()
 {
-    
-    return 0;
-}   
+    // visualize `myGraphJson`!
+    string myGraphJson = "{\"kind\":{\"graph\":true},"
+                         "\"nodes\":[{\"id\":\"1\"},{\"id\":\"2\"}],"
+                         "\"edges\":[{\"from\":\"1\",\"to\":\"2\"}]}";
+    cout << myGraphJson;
+}
