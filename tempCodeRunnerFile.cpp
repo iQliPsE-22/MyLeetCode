@@ -1,50 +1,38 @@
 #include <iostream>
-#include <bits/stdc++.h>
+#include <cmath>
 using namespace std;
 
-vector<string> findRelativeRanks(vector<int> &score)
+int find_max_distance(int X, int Y, int Z)
 {
-    vector<string> ans;
-    int max = -1;
-    int max2 = -1;
-    int max3 = -1;
-    for (int i = 0; i < score.size(); i++)
+    int H = 0; 
+    if ((H < Y && Y < Z) || (Z < Y && Y < H))
     {
-        ans.push_back(to_string(score[i]));
-        if (score[i] > max)
-        {
-            max3 = max2;
-            max2 = max;
-            max = score[i];
-        }
-        else if (score[i] > max2)
-        {
-            max3 = max2;
-            max2 = score[i];
-        }
-        else if (score[i] > max3)
-            max3 = score[i];
+        return -1;
     }
-    cout << max << " " << max2 << " " << max3 << endl;
-    for (int i = 0; i < ans.size(); i++)
-    {
-        if (ans[i] == to_string(max))
-            ans[i] = "Gold Medal";
-        if (ans[i] == to_string(max2))
-            ans[i] = "Silver Medal";
-        if (ans[i] == to_string(max3))
-            ans[i] = "Bronze Medal";
-    }
-    return ans;
+
+    int distance_H_to_Z = abs(Z - H);
+    int distance_Z_to_X = abs(X - Z);
+
+    int total_distance = distance_H_to_Z + distance_Z_to_X;
+
+    return total_distance;
 }
+
 int main()
 {
+    int X, Y, Z;
 
-    vector<int> score = {5, 4, 3, 2, 1};
-    vector<string> ans = findRelativeRanks(score);
-    for (int i = 0; i < ans.size(); i++)
-    {
-        cout << ans[i] << "\t";
-    }
+    cout << "Enter the distance to John's workplace (X): ";
+    cin >> X;
+
+    cout << "Enter the distance to the construction site (Y): ";
+    cin >> Y;
+
+    cout << "Enter the distance to the constructor's home (Z): ";
+    cin >> Z;
+
+    int result = find_max_distance(X, Y, Z);
+    cout << result << endl; // Output the result
+                            //
     return 0;
 }
