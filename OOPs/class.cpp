@@ -1,26 +1,28 @@
 #include <iostream>
-#include <string>
-#include <sstream>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-void findSubstringIndices(const string &str1, const string &str2)
+
+class School
 {
-    int n = str1.length();
-    int k = str2.length();
-
-    for (int i = 0; i < k; ++i)
+public:
+    void print()
     {
-        if (str2.substr(i, n) == str1)
-        {
-            cout << i << " ";
-        }   
+        cout << "In School";
     }
-}
-
+};
+class Student
+{
+public:
+    void print()
+    {
+        cout << ", I am a Student";
+    }
+};
 int main()
 {
-    int n = 3, k = 6;
-    string str1 = "abc", str2 = "abcabc";
-    findSubstringIndices(str1, str2);
+    School s;
+    s.print();
+    Student st;
+    st.print();
     return 0;
 }
