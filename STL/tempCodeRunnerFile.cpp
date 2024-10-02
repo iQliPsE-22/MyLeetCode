@@ -1,35 +1,25 @@
+// Online C++ compiler to run C++ program online
 #include <iostream>
-#include <bits/stdc++.h>
+#include <string>
+#include <unordered_map>
 using namespace std;
-
 int main()
 {
-    vector<int> people = {1, 2};
-    int limit = 3;
+    // Write C++ code here
+    string S = "941686879370";
     int ans = 0;
-    int left = 0;
-    int right = people.size() - 1;
-    sort(people.begin(), people.end());
-    while (left <= right)
+    unordered_map<int, int> mp;
+    for (int i = 0; i < S.length(); i++)
     {
-        if (people[left] + people[right] <= limit)
+        for (int j = 1; j <= S.length() - i; j++)
         {
-            ans++;
-            left++;
-            right--;
-        }
-        else if (people[left] + people[right] > limit)
-        {
-            ans++;
-            right--;
-        }
-        else
-        {
-            ans++;
-            left++;
-            right--;
+            long long num = stoll(S.substr(i, j));
+            if (num % 2 != 0 && mp[num] == 0)
+            {
+                ans++;
+                mp[num] = 1;
+            }
         }
     }
     cout << ans;
-    return 0;
 }
